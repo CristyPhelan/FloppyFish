@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenethings/backyard.jpg" type="Texture" id=1]
+
+[node name="pool" type="StaticBody2D"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -12, 20 )
+texture = ExtResource( 1 )
+region_enabled = true
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -430.07, -275.399 )
+scale = Vector2( 0.672659, 0.653747 )
+polygon = PoolVector2Array( 555, 440, 571, 458, 592, 507, 625, 525, 677, 530, 717, 528, 760, 511, 787, 453, 794, 445, 796, 424, 787, 433, 785, 445, 749.369, 456.445, 721.123, 459.504, 686.93, 461.034, 645.304, 459.504, 608.138, 453.386, 576, 444, 562, 429 )

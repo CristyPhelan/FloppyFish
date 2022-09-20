@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://tricycle-removebg-preview.png" type="Texture" id=1]
+
+[node name="Node2D" type="StaticBody2D"]
+scale = Vector2( 0.35, 0.35 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -122, 121, -103, 134, -78, 138, -53, 126, -29, 89, 37, 83, 54, 113, 94, 124, 127, 106, 141, 79, 139, 49, 122.857, -114.286, 102.857, -131.429, 71.4286, -131.429, 55, -129, 54.2857, -120, 48.5714, -111.429, 48.5714, -94.2857, 48, -84, 43, -75, 45.7143, -62.8571, 42.8571, -54.2857, 40, -48.5714, -45, -56, -86, -52, -106, -37, -107, -24, -109, -15, -125, -2, -132, 18, -130, 40, -124, 49, -133, 68, -137, 82, -134, 100, -131, 109 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+normal_map = ExtResource( 1 )

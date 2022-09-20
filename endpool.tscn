@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="endpool" type="Area2D"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -436.527, -292.818 )
+scale = Vector2( 0.649404, 0.633081 )
+polygon = PoolVector2Array( 558, 435, 556, 445, 566, 450, 573, 464, 591, 508, 610, 521, 635, 525, 662, 531, 705, 530, 733, 525, 764, 510, 785, 452, 797, 445, 797, 435, 797, 429, 785, 435, 761, 428, 729, 419, 685, 417, 632, 419, 592, 428, 568, 436 )

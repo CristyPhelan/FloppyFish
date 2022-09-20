@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 133, 336.5 )
+
+[node name="Node2D" type="StaticBody2D"]
+position = Vector2( -7, -2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -7, 4 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -4, 4 )
+region_enabled = true
+region_rect = Rect2( 147.181, 247.466, 266.948, 680.629 )
+__meta__ = {
+"_edit_group_": true
+}

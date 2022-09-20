@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scenes/couch.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/bookshelf.tscn" type="PackedScene" id=2]
+[ext_resource path="res://planter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/drawers.tscn" type="PackedScene" id=4]
+[ext_resource path="res://fish.tscn" type="PackedScene" id=5]
+[ext_resource path="res://room.jpg" type="Texture" id=6]
+[ext_resource path="res://fishtank.tscn" type="PackedScene" id=7]
+[ext_resource path="res://room2.jpg" type="Texture" id=8]
+[ext_resource path="res://Screenshot (36).png" type="Texture" id=9]
+[ext_resource path="res://killbox.tscn" type="PackedScene" id=10]
+[ext_resource path="res://floor.jpg" type="Texture" id=11]
+[ext_resource path="res://final.tscn" type="PackedScene" id=12]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2342, 1943 )
+scale = Vector2( 10.7283, 9.73871 )
+texture = ExtResource( 9 )
+
+[node name="wallsection" type="Sprite" parent="."]
+position = Vector2( 2117, 563 )
+texture = ExtResource( 8 )
+
+[node name="wallsection" type="Sprite" parent="wallsection"]
+position = Vector2( 146, 0 )
+texture = ExtResource( 8 )
+
+[node name="wallsection" type="Sprite" parent="wallsection/wallsection"]
+position = Vector2( 146, 0 )
+texture = ExtResource( 8 )
+
+[node name="wallsection" type="Sprite" parent="wallsection/wallsection/wallsection"]
+position = Vector2( 146, -1 )
+texture = ExtResource( 8 )
+
+[node name="wallsection2" type="Sprite" parent="wallsection"]
+position = Vector2( 579, -1 )
+texture = ExtResource( 8 )
+
+[node name="wallsection" type="Sprite" parent="wallsection/wallsection2"]
+position = Vector2( 143, 3 )
+texture = ExtResource( 8 )
+
+[node name="Floor" type="Sprite" parent="."]
+position = Vector2( 1483.75, 1385 )
+scale = Vector2( 1.48125, 2.60377 )
+texture = ExtResource( 11 )
+
+[node name="roombackground" type="Sprite" parent="."]
+position = Vector2( 1006, 563 )
+texture = ExtResource( 6 )
+
+[node name="fishtank" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2212, 942 )
+
+[node name="fish" parent="." instance=ExtResource( 5 )]
+position = Vector2( 268, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bookshelf" parent="." instance=ExtResource( 2 )]
+position = Vector2( 291, 595 )
+
+[node name="planter" parent="." instance=ExtResource( 3 )]
+position = Vector2( 402, 766 )
+
+[node name="couch" parent="." instance=ExtResource( 1 )]
+position = Vector2( 775, 729 )
+
+[node name="drawers" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1577, 757 )
+
+[node name="killbox" parent="." instance=ExtResource( 10 )]
+position = Vector2( 0, 322 )
+
+[node name="final" parent="." instance=ExtResource( 12 )]
+position = Vector2( 2073, 887 )
+
+[connection signal="body_entered" from="killbox" to="fish" method="_on_killbox_body_entered"]
+[connection signal="body_entered" from="final" to="fish" method="_on_final_body_entered"]

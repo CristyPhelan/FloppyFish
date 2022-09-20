@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://gameover.gd" type="Script" id=1]
+[ext_resource path="res://sewer system.jpg" type="Texture" id=2]
+[ext_resource path="res://istockphoto-1307986275-170667a.jpg" type="Texture" id=3]
+[ext_resource path="res://reset-removebg-preview (1).png" type="Texture" id=4]
+
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+
+[node name="SewerSystem" type="Sprite" parent="."]
+position = Vector2( 494, 299 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( -5.97388, 64.7385, 994.631, 634.561 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 377.0
+margin_top = 355.0
+margin_right = 622.0
+margin_bottom = 451.0
+icon = ExtResource( 4 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 500, 231 )
+scale = Vector2( 1.18039, 1.01799 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 150, 85, 237, 153 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
