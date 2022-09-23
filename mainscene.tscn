@@ -57,10 +57,15 @@ texture = ExtResource( 6 )
 position = Vector2( 2212, 942 )
 
 [node name="fish" parent="." instance=ExtResource( 5 )]
-position = Vector2( 268, 90 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( 293, 190 )
+
+[node name="Camera2D2" type="Camera2D" parent="fish"]
+current = true
+zoom = Vector2( 2, 2 )
+limit_left = 0
+limit_top = 0
+limit_right = 3000
+limit_bottom = 850
 
 [node name="bookshelf" parent="." instance=ExtResource( 2 )]
 position = Vector2( 291, 595 )

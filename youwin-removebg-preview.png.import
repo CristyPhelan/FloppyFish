@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BirdS_0003_Capa-0.png-86f2f3250e063c3fff97f30e2882d588.stex"
+path="res://.import/youwin-removebg-preview.png-127c3f102850ec0df0bd0d957d562cf6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BirdS_0003_Capa-0.png"
-dest_files=[ "res://.import/BirdS_0003_Capa-0.png-86f2f3250e063c3fff97f30e2882d588.stex" ]
+source_file="res://youwin-removebg-preview.png"
+dest_files=[ "res://.import/youwin-removebg-preview.png-127c3f102850ec0df0bd0d957d562cf6.stex" ]
 
 [params]
 
