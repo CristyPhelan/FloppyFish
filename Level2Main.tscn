@@ -75,6 +75,7 @@ position = Vector2( 148, 344 )
 
 [node name="Camera2D" type="Camera2D" parent="fish"]
 position = Vector2( 0, 3 )
+current = true
 
 [node name="endpool" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1060, 656 )
