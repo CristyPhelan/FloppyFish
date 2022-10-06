@@ -86,4 +86,3 @@ position = Vector2( 0, 322 )
 position = Vector2( 2073, 887 )
 
 [connection signal="body_entered" from="killbox" to="fish" method="_on_killbox_body_entered"]
-[connection signal="body_entered" from="final" to="fish" method="_on_final_body_entered"]
