@@ -71,16 +71,7 @@ position = Vector2( -224, -219 )
 position = Vector2( 1035, 628 )
 
 [node name="fish" parent="." instance=ExtResource( 6 )]
-position = Vector2( 146, 356 )
-
-[node name="Camera2D" type="Camera2D" parent="fish"]
-position = Vector2( 74, 168 )
-current = true
-zoom = Vector2( 0.75, 0.75 )
-limit_left = 0
-limit_top = 0
-limit_right = 1250
-limit_bottom = 800
+position = Vector2( 219, 368 )
 
 [node name="endpool" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1060, 656 )
@@ -95,6 +86,14 @@ autostart = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -76, 395 )
 shape = SubResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 220, 524 )
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 1250
+limit_bottom = 750
 
 [connection signal="body_entered" from="endpool" to="." method="_on_endpool_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

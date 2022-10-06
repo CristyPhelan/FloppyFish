@@ -5,6 +5,13 @@ var screensize
 
 func _ready():
 	randomize()
+	$fish/Sprite.scale *= 0.6
+	$fish/CollisionShape2D.scale *= 0.6
+	$fish.jump_speed = -600
+	$fish.speed = 200
+	
+func _process(delta):
+	$Camera2D.position = $fish.position
 	
 func _on_Timer_timeout():
 	var new_enemy = EnemyScene.instance()
@@ -16,6 +23,6 @@ func _on_Timer_timeout():
 		new_enemy.get_node("Sprite").flip_v = true
 	new_enemy.spawn(pos, direction)
 
-
 func _on_endpool_body_entered(body):
-	pass # Replace with function body.
+	if body == self:
+		get_tree().change_scene("res://scenes/congrats2.tscn")
