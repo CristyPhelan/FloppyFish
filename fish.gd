@@ -20,18 +20,20 @@ func _physics_process(delta):
 	if Input.is_action_just_released("crouch"):
 		transform.y.y = 1
 
+
 func die():
 	get_tree().change_scene("res://gameover2.tscn")
-
-func _on_endpool_body_entered(body):
-	if body == self:
-		get_tree().change_scene("res://scenes/congrats2.tscn")# Replace with function body.
-
+#works
 func _on_final_body_entered(body):
 	if body ==  self:
 		yield(get_tree().create_timer(1.0), "timeout")
 		get_tree().change_scene("res://scenes/congrats.tscn")
-
 func _on_killbox_body_entered(body):
 	if body == self:
 		get_tree().change_scene("res://gameover.tscn")
+func _on_endpool_body_entered(body):
+	if body == self:
+		$CollisionShape2D.set_deferred("disabled", true)
+		set_physics_process(false)
+		yield(get_tree().create_timer(1.0), "timeout")
+		get_tree().change_scene("res://scenes/congrats2.tscn")

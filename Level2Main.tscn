@@ -67,14 +67,14 @@ __meta__ = {
 [node name="clothesrack" parent="ground" instance=ExtResource( 9 )]
 position = Vector2( -224, -219 )
 
-[node name="pool" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1035, 628 )
+[node name="pool" parent="ground" instance=ExtResource( 10 )]
+position = Vector2( 62, -145 )
 
 [node name="fish" parent="." instance=ExtResource( 6 )]
 position = Vector2( 219, 368 )
 
 [node name="endpool" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1060, 656 )
+position = Vector2( 1055, 655 )
 script = ExtResource( 12 )
 
 [node name="Timer" type="Timer" parent="."]
@@ -95,5 +95,5 @@ limit_top = 0
 limit_right = 1250
 limit_bottom = 750
 
-[connection signal="body_entered" from="endpool" to="." method="_on_endpool_body_entered"]
+[connection signal="body_entered" from="endpool" to="fish" method="_on_endpool_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

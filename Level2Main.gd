@@ -23,6 +23,6 @@ func _on_Timer_timeout():
 		new_enemy.get_node("Sprite").flip_v = true
 	new_enemy.spawn(pos, direction)
 
-func _on_endpool_body_entered(body):
-	if body == self:
-		get_tree().change_scene("res://scenes/congrats2.tscn")
+
+
+
