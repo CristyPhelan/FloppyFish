@@ -24,5 +24,7 @@ func _on_Timer_timeout():
 	new_enemy.spawn(pos, direction)
 
 
-
-
+func _on_endpool_body_entered(body):
+	if body == $fish:
+		$splash.position = $fish.position
+		$splash.emitting = true

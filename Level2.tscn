@@ -1,18 +1,18 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://scenethings/backyard.jpg" type="Texture" id=1]
-[ext_resource path="res://Level2Main.gd" type="Script" id=2]
-[ext_resource path="res://slide-removebg-preview.png" type="Texture" id=3]
-[ext_resource path="res://tricycle.tscn" type="PackedScene" id=4]
-[ext_resource path="res://ground.tscn" type="PackedScene" id=5]
-[ext_resource path="res://fish.tscn" type="PackedScene" id=6]
-[ext_resource path="res://slide.tscn" type="PackedScene" id=7]
-[ext_resource path="res://railing.tscn" type="PackedScene" id=8]
-[ext_resource path="res://rack.tscn" type="PackedScene" id=9]
-[ext_resource path="res://pool.tscn" type="PackedScene" id=10]
-[ext_resource path="res://endpool.tscn" type="PackedScene" id=11]
-[ext_resource path="res://endpool.gd" type="Script" id=12]
-[ext_resource path="res://splashparticle.tscn" type="PackedScene" id=13]
+[ext_resource path="res://slide.tscn" type="PackedScene" id=1]
+[ext_resource path="res://pool.tscn" type="PackedScene" id=2]
+[ext_resource path="res://tricycle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://splashparticle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://fish.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ground.tscn" type="PackedScene" id=6]
+[ext_resource path="res://railing.tscn" type="PackedScene" id=7]
+[ext_resource path="res://rack.tscn" type="PackedScene" id=8]
+[ext_resource path="res://endpool.tscn" type="PackedScene" id=9]
+[ext_resource path="res://endpool.gd" type="Script" id=10]
+[ext_resource path="res://Level2Main.gd" type="Script" id=11]
+[ext_resource path="res://scenethings/backyard.jpg" type="Texture" id=12]
+[ext_resource path="res://slide-removebg-preview.png" type="Texture" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 57.125, 8 )
@@ -24,7 +24,7 @@ extents = Vector2( 35, 6.5 )
 extents = Vector2( 112.5, 349 )
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource( 11 )
 
 [node name="treehouse floor" type="StaticBody2D" parent="."]
 position = Vector2( 80, 388 )
@@ -40,43 +40,43 @@ shape = SubResource( 2 )
 [node name="background" type="Sprite" parent="."]
 position = Vector2( 632, 386 )
 scale = Vector2( 0.63, 0.59272 )
-texture = ExtResource( 1 )
+texture = ExtResource( 12 )
 
 [node name="slide" type="Sprite" parent="."]
 position = Vector2( 167, 555 )
 scale = Vector2( 0.38848, 0.480257 )
-texture = ExtResource( 3 )
+texture = ExtResource( 13 )
 
-[node name="ground" parent="." instance=ExtResource( 5 )]
-position = Vector2( 973, 773 )
+[node name="ground" parent="." instance=ExtResource( 6 )]
+position = Vector2( 982, 772 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="tricycle" parent="ground" instance=ExtResource( 4 )]
+[node name="tricycle" parent="ground" instance=ExtResource( 3 )]
 position = Vector2( -459, -135 )
 
-[node name="slide2" parent="ground" instance=ExtResource( 7 )]
+[node name="slide2" parent="ground" instance=ExtResource( 1 )]
 position = Vector2( -849, -249 )
 
-[node name="rail" parent="ground" instance=ExtResource( 8 )]
+[node name="rail" parent="ground" instance=ExtResource( 7 )]
 position = Vector2( -686, -392 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="clothesrack" parent="ground" instance=ExtResource( 9 )]
+[node name="clothesrack" parent="ground" instance=ExtResource( 8 )]
 position = Vector2( -224, -219 )
 
-[node name="pool" parent="ground" instance=ExtResource( 10 )]
+[node name="pool" parent="ground" instance=ExtResource( 2 )]
 position = Vector2( 62, -145 )
 
-[node name="fish" parent="." instance=ExtResource( 6 )]
+[node name="fish" parent="." instance=ExtResource( 5 )]
 position = Vector2( 219, 368 )
 
-[node name="endpool" parent="." instance=ExtResource( 11 )]
+[node name="endpool" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1059, 656 )
-script = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.412
@@ -96,8 +96,8 @@ limit_top = 0
 limit_right = 1250
 limit_bottom = 750
 
-[node name="splash" parent="." instance=ExtResource( 13 )]
-scale = Vector2( 1, 1 )
+[node name="splash" parent="." instance=ExtResource( 4 )]
+scale = Vector2( 10, 10 )
 
 [connection signal="body_entered" from="endpool" to="." method="_on_endpool_body_entered"]
 [connection signal="body_entered" from="endpool" to="fish" method="_on_endpool_body_entered"]

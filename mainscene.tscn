@@ -63,7 +63,7 @@ position = Vector2( 2212, 942 )
 position = Vector2( 293, 190 )
 
 [node name="Camera2D2" type="Camera2D" parent="fish"]
-position = Vector2( 0, 5 )
+position = Vector2( 7, -2 )
 current = true
 zoom = Vector2( 2, 2 )
 limit_left = 0
@@ -91,7 +91,6 @@ position = Vector2( 2073, 887 )
 
 [node name="splash" parent="." instance=ExtResource( 13 )]
 position = Vector2( 2144, 852 )
-scale = Vector2( 20, 20 )
 
 [connection signal="body_entered" from="killbox" to="fish" method="_on_killbox_body_entered"]
 [connection signal="body_entered" from="final" to="." method="_on_final_body_entered"]

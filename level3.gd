@@ -1,21 +1,19 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+func _ready():
+	randomize()
+	$fish/Sprite.scale *= 1.5
+	$fish/CollisionShape2D.scale *= 1.5
+	$fish.jump_speed = -800
+	$fish.gravity = 3000
+	$fish.speed = 400
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-func _on_final_body_entered(body):
-	if body == $fish:
-		$splash.position = $fish.position
-		$splash.emitting = true

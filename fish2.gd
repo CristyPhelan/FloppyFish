@@ -33,5 +33,6 @@ func die():
 
 func _on_endpool_body_entered(body):
 	if body == self:
-		
 		get_tree().change_scene("res://scenes/congrats2.tscn")# Replace with function body.
+	
+

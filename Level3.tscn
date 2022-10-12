@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://killbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://toliet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fish.tscn" type="PackedScene" id=3]
+[ext_resource path="res://curtain.tscn" type="PackedScene" id=4]
+[ext_resource path="res://bathrub.tscn" type="PackedScene" id=5]
+[ext_resource path="res://level3.gd" type="Script" id=6]
+[ext_resource path="res://actual bathroom.jpg" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 167.25, 301.25 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 230.25, 275 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 210, 294 )
+
+[node name="Level3" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 4.5, 4.5 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="shelf" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelf"]
+position = Vector2( 251.75, 1124.75 )
+shape = SubResource( 1 )
+
+[node name="sink" type="StaticBody2D" parent="shelf"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelf/sink"]
+position = Vector2( 778.75, 1146 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="shelf"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelf/StaticBody2D"]
+shape = SubResource( 3 )
+
+[node name="washingmachine" type="StaticBody2D" parent="shelf"]
+position = Vector2( 671, -815 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelf/washingmachine"]
+position = Vector2( 2184, 1944 )
+shape = SubResource( 4 )
+
+[node name="killbox" parent="." instance=ExtResource( 1 )]
+position = Vector2( -555, 631 )
+
+[node name="bathrub" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1843, 1075 )
+scale = Vector2( -4.5, 4.5 )
+
+[node name="fish" parent="." instance=ExtResource( 3 )]
+position = Vector2( 267, 751 )
+
+[node name="Camera2D" type="Camera2D" parent="fish"]
+current = true
+zoom = Vector2( 2.5, 2.5 )
+limit_left = 0
+limit_top = 0
+limit_right = 3520
+limit_bottom = 1500
+
+[node name="Node2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1849, 609 )
+
+[node name="toliet" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3312, 1172 )
+
+[connection signal="body_entered" from="killbox" to="fish" method="_on_killbox_body_entered"]
