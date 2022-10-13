@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ocean.jpg" type="Texture" id=1]
 [ext_resource path="res://RedFish2.png" type="Texture" id=2]
 [ext_resource path="res://trophy-removebg-preview.png" type="Texture" id=3]
 [ext_resource path="res://youwin-removebg-preview.png" type="Texture" id=4]
+[ext_resource path="res://scenes/congrats2.gd" type="Script" id=5]
 
 [node name="congrats2" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="ocean" type="Sprite" parent="."]
 position = Vector2( 1, 0 )

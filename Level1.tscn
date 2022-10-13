@@ -18,46 +18,59 @@
 [node name="Level1" type="Node2D"]
 script = ExtResource( 10 )
 
-[node name="bluebackground" type="Sprite" parent="."]
+[node name="colorbackground" type="Sprite" parent="."]
 position = Vector2( 2342, 1943 )
 scale = Vector2( 10.7283, 9.73871 )
 texture = ExtResource( 14 )
 
-[node name="wallsection" type="Sprite" parent="."]
-position = Vector2( 2117, 563 )
+[node name="wallsection" type="Sprite" parent="colorbackground"]
+position = Vector2( -20.9726, -141.703 )
+scale = Vector2( 0.0932114, 0.102683 )
 texture = ExtResource( 11 )
 
-[node name="wallsection" type="Sprite" parent="wallsection"]
+[node name="wallsection" type="Sprite" parent="colorbackground/wallsection"]
 position = Vector2( 146, 0 )
 texture = ExtResource( 11 )
 
-[node name="wallsection" type="Sprite" parent="wallsection/wallsection"]
+[node name="wallsection" type="Sprite" parent="colorbackground/wallsection/wallsection"]
 position = Vector2( 146, 0 )
 texture = ExtResource( 11 )
 
-[node name="wallsection" type="Sprite" parent="wallsection/wallsection/wallsection"]
+[node name="wallsection" type="Sprite" parent="colorbackground/wallsection/wallsection/wallsection"]
 position = Vector2( 146, -1 )
 texture = ExtResource( 11 )
 
-[node name="wallsection2" type="Sprite" parent="wallsection"]
+[node name="wallsection2" type="Sprite" parent="colorbackground/wallsection"]
 position = Vector2( 579, -1 )
 texture = ExtResource( 11 )
 
-[node name="wallsection" type="Sprite" parent="wallsection/wallsection2"]
+[node name="wallsection" type="Sprite" parent="colorbackground/wallsection/wallsection2"]
 position = Vector2( 143, 3 )
 texture = ExtResource( 11 )
 
-[node name="Floor" type="Sprite" parent="wallsection"]
+[node name="Floor" type="Sprite" parent="colorbackground/wallsection"]
 position = Vector2( -633.25, 822 )
 scale = Vector2( 1.48125, 2.60377 )
 texture = ExtResource( 13 )
 
-[node name="roombackground" type="Sprite" parent="."]
+[node name="background" type="Sprite" parent="."]
 position = Vector2( 1006, 563 )
 texture = ExtResource( 12 )
 
-[node name="fishtank" parent="." instance=ExtResource( 9 )]
-position = Vector2( 2212, 942 )
+[node name="fishtank" parent="background" instance=ExtResource( 9 )]
+position = Vector2( 1206, 379 )
+
+[node name="bookshelf" parent="background" instance=ExtResource( 2 )]
+position = Vector2( -715, 32 )
+
+[node name="planter" parent="background/bookshelf" instance=ExtResource( 3 )]
+position = Vector2( 111, 171 )
+
+[node name="couch" parent="background/bookshelf" instance=ExtResource( 4 )]
+position = Vector2( 484, 134 )
+
+[node name="drawers" parent="background/bookshelf" instance=ExtResource( 5 )]
+position = Vector2( 1286, 162 )
 
 [node name="fish" parent="." instance=ExtResource( 8 )]
 position = Vector2( 293, 190 )
@@ -70,18 +83,6 @@ limit_left = 0
 limit_top = 0
 limit_right = 3000
 limit_bottom = 850
-
-[node name="bookshelf" parent="." instance=ExtResource( 2 )]
-position = Vector2( 291, 595 )
-
-[node name="planter" parent="bookshelf" instance=ExtResource( 3 )]
-position = Vector2( 111, 171 )
-
-[node name="couch" parent="bookshelf" instance=ExtResource( 4 )]
-position = Vector2( 484, 134 )
-
-[node name="drawers" parent="bookshelf" instance=ExtResource( 5 )]
-position = Vector2( 1286, 162 )
 
 [node name="killbox" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 322 )

@@ -36,4 +36,15 @@ func _on_endpool_body_entered(body):
 		$CollisionShape2D.set_deferred("disabled", true)
 		set_physics_process(false)
 		yield(get_tree().create_timer(1.0), "timeout")
-		get_tree().change_scene("res://Level3.tscn")
+		get_tree().change_scene("res://congrats3.tscn")
+
+func _on_killbox3_body_entered(body):
+	if body == self:
+		get_tree().change_scene("res://gameover3.tscn")
+
+func _on_endtoliet_body_entered(body):
+	if body == self:
+		$CollisionShape2D.set_deferred("disabled", true)
+		set_physics_process(false)
+		yield(get_tree().create_timer(1.0), "timeout")
+		get_tree().change_scene("res://scenes/congrats2.tscn")

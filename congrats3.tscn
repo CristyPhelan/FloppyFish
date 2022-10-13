@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://RedFish2.png" type="Texture" id=1]
 [ext_resource path="res://ocean.jpg" type="Texture" id=2]
 [ext_resource path="res://nextbutton.png" type="Texture" id=3]
 [ext_resource path="res://trophy-removebg-preview.png" type="Texture" id=4]
+[ext_resource path="res://congrats3.gd" type="Script" id=5]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 5 )
 
 [node name="background" type="Sprite" parent="."]
 scale = Vector2( 1.27213, 1.66667 )
@@ -37,3 +39,5 @@ margin_bottom = 466.0
 position = Vector2( 513, 420 )
 scale = Vector2( 0.420904, 0.38843 )
 texture = ExtResource( 3 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
