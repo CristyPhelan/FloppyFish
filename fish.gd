@@ -21,9 +21,8 @@ func _physics_process(delta):
 		transform.y.y = 1
 
 
-func die():
-	get_tree().change_scene("res://gameover2.tscn")
-#works
+
+#for level 1
 func _on_final_body_entered(body):
 	if body ==  self:
 		yield(get_tree().create_timer(1.0), "timeout")
@@ -31,6 +30,11 @@ func _on_final_body_entered(body):
 func _on_killbox_body_entered(body):
 	if body == self:
 		get_tree().change_scene("res://gameover.tscn")
+
+
+#for level 2
+func die():
+	get_tree().change_scene("res://gameover2.tscn")
 func _on_endpool_body_entered(body):
 	if body == self:
 		$CollisionShape2D.set_deferred("disabled", true)
@@ -38,6 +42,7 @@ func _on_endpool_body_entered(body):
 		yield(get_tree().create_timer(1.0), "timeout")
 		get_tree().change_scene("res://congrats3.tscn")
 
+#for level 3
 func _on_killbox3_body_entered(body):
 	if body == self:
 		get_tree().change_scene("res://gameover3.tscn")
