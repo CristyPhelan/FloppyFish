@@ -15,10 +15,10 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	if is_on_floor() and Input.is_action_just_pressed("ui_up"):
 		velocity.y = jump_speed
-	if Input.is_action_pressed("crouch"):
-		transform.y.y = 0.5
-	if Input.is_action_just_released("crouch"):
-		transform.y.y = 1
+#	if Input.is_action_pressed("crouch"):
+#		transform.y.y = 0.5
+#	if Input.is_action_just_released("crouch"):
+#		transform.y.y = 1
 
 
 
@@ -53,3 +53,9 @@ func _on_endtoliet_body_entered(body):
 		set_physics_process(false)
 		yield(get_tree().create_timer(1.0), "timeout")
 		get_tree().change_scene("res://scenes/congrats2.tscn")
+
+
+func _on_Timer_timeout():
+	var x = rand_range(1, 2.5)
+	$Timer.wait_time = x
+	$AnimationPlayer.play("flop")

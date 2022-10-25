@@ -82,9 +82,6 @@ polygon = PoolVector2Array( 1412, 478, 1413, 496, 1417, 511, 1523, 511, 1530, 49
 
 [node name="fish" parent="." instance=ExtResource( 3 )]
 position = Vector2( 139, 395 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Camera2D" type="Camera2D" parent="fish"]
 position = Vector2( 5, 5 )
